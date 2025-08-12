@@ -1,0 +1,259 @@
+<!doctype html>
+<!--
+  Meena MK - Personal Portfolio (Single-file index.html)
+  - Drop this file into the root of a GitHub Pages repository (e.g. username.github.io)
+  - Edit the placeholders (YOUR NAME, bio, projects, links, images) below.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meena Muthukrishnan — RPA & Automation Developer</title>
+  <meta name="description" content="Portfolio of Meena Muthukrishnan — RPA Developer. Projects, skills, contact." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#7c3aed; /* purple */
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --max-w:1100px;
+      --gap:18px;
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg, #071022 0%, var(--bg) 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+      font-size:16px;
+    }
+    .wrap{
+      width:100%;
+      max-width:var(--max-w);
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:36px;
+      align-items:start;
+    }
+    header{
+      grid-column: 1 / -1;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;\      margin-bottom:6px;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .avatar{
+      width:56px;height:56px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);background:linear-gradient(135deg,var(--accent),#4f46e5);
+      display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:#fff;
+    }
+    h1{margin:0;font-size:20px}
+    .nav{display:flex;gap:10px;align-items:center}
+    a.btn{display:inline-block;padding:8px 12px;border-radius:10px;background:var(--glass);text-decoration:none;color:var(--muted);font-weight:600;font-size:14px;border:1px solid rgba(255,255,255,0.02)}
+    a.cta{background:linear-gradient(90deg,var(--accent),#4f46e5);color:white;border:0}
+
+    /* Left column (main) */
+    main{background:transparent}
+    .hero{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:22px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03);
+      display:flex;gap:20px;align-items:center;
+    }
+    .hero .info{flex:1}
+    .name{font-size:28px;margin:0 0 6px 0}
+    .role{color:var(--muted);margin:0 0 12px 0}
+    .bio{color:var(--muted);margin:0 0 14px 0}
+    .links{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:13px;text-decoration:none}
+
+    /* Projects */
+    .section{margin-top:18px}
+    .section h2{margin:0 0 12px 0;font-size:18px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.017), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .card h3{margin:0 0 6px 0;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .tags{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted)}
+
+    /* Right column (sidebar) */
+    aside{position:sticky;top:40px}
+    .contact-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .skill-list{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+    .skill{display:flex;justify-content:space-between;align-items:center}
+    .skill .bar{height:8px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden;width:58%}
+    .skill .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#4f46e5)}
+
+    footer{grid-column:1 / -1;margin-top:26px;color:var(--muted);font-size:14px;text-align:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .wrap{grid-template-columns:1fr;}
+      .avatar{width:48px;height:48px}
+      aside{position:relative;top:auto}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="document">
+    <header>
+      <div class="brand">
+        <div class="avatar" aria-hidden="true">MM</div>
+        <div>
+          <h1>Meena Muthukrishnan</h1>
+          <div style="color:var(--muted);font-size:13px">RPA Developer • Automation • Blockchain experiments</div>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#about">About</a>
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn cta" href="#contact">Hire me</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="intro">
+        <div class="info">
+          <h2 id="intro" class="name">Hi 👋</h2>
+          <div class="role">Senior RPA Developer — specialized in UiPath, Power Platform, and integration with blockchain</div>
+          <p class="bio">I build automation solutions for banking and insurance workflows — invoice processing, document understanding, and end-to-end RPA orchestration. I also experiment with DApps and smart contracts to bring transparency to invoicing.</p>
+          <div class="links" role="list">
+            <a class="pill" href="#projects">Featured projects</a>
+            <a class="pill" href="https://github.com/meenamk" target="_blank" rel="noopener">GitHub</a>
+            <a class="pill" href="https://www.linkedin.com/in/meena-muthukrishnan-abb50bb4/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="pill" href="mailto:meenamuthukrishnanr@gmail.com">Email</a>
+          </div>
+        </div>
+        <div style="width:220px;display:flex;flex-direction:column;align-items:center;gap:12px">
+            <img src="C:\Users\meena\Downloads\Profile photo.jpg" alt="Meena MK" style="width:220px;border-radius:12px;">
+          <!-- Replace the colored box below with your real photo by replacing the <div> with <img src="/path/to/photo.jpg" alt="Meena MK" style="width:220px;border-radius:12px;"> -->
+          <!--<div style="width:220px;height:220px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:34px;color:white">MM</div>-->
+          <a class="pill" href="Meena Muthukrishnan Senior RPA Developer Resume.pdf" download>Download Resume</a>
+        </div>
+      </section>
+
+      <section id="projects" class="section" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected projects</h2>
+        <div class="projects">
+          <article class="card">
+            <h3>Meena — NFT-based Invoice DApp</h3>
+            <p>Onboarding, staking, service NFTs, and conditional fund release via smart contracts. Built PoC integrating PowerApps with Ethereum (Infura).</p>
+            <div class="tags"><span class="tag">Blockchain</span><span class="tag">PowerApps</span><span class="tag">Smart Contracts</span></div>
+          </article>
+
+          <article class="card">
+            <h3>Invoice Automation (UiPath)</h3>
+            <p>End-to-end invoice processing using UiPath Document Understanding + validation with Power Platform. Reduced processing time and errors.</p>
+            <div class="tags"><span class="tag">UiPath</span><span class="tag">Document Understanding</span><span class="tag">RPA</span></div>
+          </article>
+
+          <article class="card">
+            <h3>RPA for Banking Integrations</h3>
+            <p>Robotic workflows for legacy AS/400 systems and data migration pipelines for insurance clients.</p>
+            <div class="tags"><span class="tag">AS/400</span><span class="tag">ETL</span><span class="tag">Insurance</span></div>
+          </article>
+
+          <article class="card">
+            <h3>Decentralized Subscription Payments (PoC)</h3>
+            <p>Smart contract design for recurring crypto payments and subscription management.</p>
+            <div class="tags"><span class="tag">Solidity</span><span class="tag">DApp</span><span class="tag">PoC</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <h2>About me</h2>
+        <div class="card">
+          <p style="margin:0">Senior Automation Software Engineer with 7+ years of experience in Robotic Process Automation (RPA), specializing in automating business processes across Banking, Insurance, and Healthcare sectors using tools like UiPath and Power Automate. Experienced in end-to-end development and delivery of automation solutions, including deployment, monitoring, and optimizing workflows. </p>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <div class="card" style="display:flex;gap:12px;align-items:center;flex-direction:column;text-align:left">
+          <p style="margin:0 0 6px 0">Interested in working together? I’m open to freelance, contract, and full-time roles.</p>
+          <div style="width:100%;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="pill" href="mailto:meenamuthukrishnanr@gmail.com">Email Me</a>
+            <a class="pill" href="https://www.linkedin.com/in/meena-muthukrishnan-abb50bb4/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="pill" href="https://github.com/meenamk" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <aside>
+      <div class="contact-card">
+        <h3 style="margin:0">Quick facts</h3>
+        <p style="margin:6px 0 0 0;color:var(--muted)">RPA Developer • UiPath • Power Platform • Blockchain enthusiast</p>
+
+        <div style="margin-top:12px">
+          <strong style="font-size:13px">Skills</strong>
+          <div class="skill-list">
+            <div class="skill"><span>UiPath</span><div class="bar" aria-hidden><i style="width:90%"></i></div></div>
+            <div class="skill"><span>Power Apps / Power Automate</span><div class="bar" aria-hidden><i style="width:80%"></i></div></div>
+            <div class="skill"><span>Copilot Studio</span><div class="bar" aria-hidden><i style="width:70%"></i></div></div>
+            <div class="skill"><span>Solidity / Ethereum</span><div class="bar" aria-hidden><i style="width:60%"></i></div></div>
+            <div class="skill"><span>Python / Scripting</span><div class="bar" aria-hidden><i style="width:75%"></i></div></div>
+          </div>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <a class="pill" href="C:\Users\meena\Downloads\Meena Muthukrishnan Senior RPA Developer Resume.pdf" download>Resume</a>
+          <a class="pill" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div style="height:18px"></div>
+<!--
+      <div class="card" style="padding:14px">
+        <strong style="font-size:13px">Availability</strong>
+        <p style="margin:8px 0 0 0;color:var(--muted)">Open for freelance & contract work. Based in Malaysia (GMT+8).</p>
+      </div>
+    -->
+
+
+      <div class="contact-card">
+        <h3 style="margin:0">Certifications</h3>
+        <!--<p style="margin:6px 0 0 0;color:var(--muted)">RPA Developer • UiPath • Power Platform • Blockchain enthusiast</p>-->
+
+        <div style="margin-top:12px">
+          <!--<strong style="font-size:13px">Skills</strong>-->
+          <div class="skill-list">
+            <div class="skill"><span>UiPath Certified Professional Specialized AI Professional Certification</span></div>
+            <div class="skill"><span>UiPath Certified Advanced RPA Developer (v1.0 - UiARD)</span></div>
+            <div class="skill"><span>Microsoft Certified: Power Platform Fundamentals (PL-900)</span></div>
+            <!--<div class="skill"><span>Python / Scripting</span><div class="bar" aria-hidden><i style="width:75%"></i></div></div>-->
+          </div>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <a class="pill" href="C:\Users\meena\Downloads\Meena Muthukrishnan Senior RPA Developer Resume.pdf" download>Resume</a>
+          <a class="pill" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div style="height:18px"></div>
+
+      <div class="card" style="padding:14px">
+        <strong style="font-size:13px">Availability</strong>
+        <p style="margin:8px 0 0 0;color:var(--muted)">Open for freelance & contract work. Based in Malaysia (GMT+8).</p>
+      </div>
+    </aside>
+
+    <footer>
+      Made with ♥ • <span style="color:var(--muted)">Passion</span>
+    </footer>
+  </div>
+</body>
+</html>
